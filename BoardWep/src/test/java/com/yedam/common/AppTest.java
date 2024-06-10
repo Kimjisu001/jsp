@@ -24,8 +24,9 @@ public class AppTest {
 		std.setBldType("0");
 		
 		//메소드 방식으로 처리하는데 안됨
-		mapper.updateStudent(std);
+//		mapper.updateStudent(std);
 		//sqlSession.update("com.yedam.mapper.StudentMapper.updateStudent", std);
+		mapper.deleteStudent(std);
 		sqlSession.commit();
 		
 		List<Student> list = 
