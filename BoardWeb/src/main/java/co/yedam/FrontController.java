@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
 import co.yedam.web.AddStudent;
+import co.yedam.web.BoardList;
 import co.yedam.web.MainControl;
 import co.yedam.web.ProductControl;
 import co.yedam.web.StudentForm;
@@ -34,8 +35,12 @@ public class FrontController extends HttpServlet {
 		//학생 등록 화면 studentForm.do
 		map.put("/studentForm.do", new StudentForm());//등록화면
 		map.put("/addStudent.do", new AddStudent());//정보 db에 저장.
+		//게시글목록
+		map.put("/boardList.do",new BoardList());
 		
 	}
+	
+	
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
