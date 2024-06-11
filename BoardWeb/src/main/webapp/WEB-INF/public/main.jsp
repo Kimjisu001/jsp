@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@include file = "header.jsp" %>
 	<h3>Main 페이지</h3>
 	<%
 		Student student =(Student)request.getAttribute("student");
@@ -26,6 +27,8 @@
 		연락처 : <%=std.getPhone() %></li>
 	<%}%>
 	</ul>
+	
+	<%@include file = "footer.jsp" %> 
 	
 	<form action="product.do" method="get">
 		<label for="stdNo">조회할 학번 : </label>
