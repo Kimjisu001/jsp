@@ -1,10 +1,10 @@
-<%@page import="co.yedam.service.BoardServiceImpl"%>
+<%@page import="co.yedam.vo.BoardVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="../public/header.jsp"%>
 <%
-List<BoardServiceImpl> list = (List<BoardVO>) request.getAttribute("boardList");
+List<BoardVO> list = (List<BoardVO>) request.getAttribute("boardList");
 %>
 <h3>게시글 목록</h3>
 <table class = "table">

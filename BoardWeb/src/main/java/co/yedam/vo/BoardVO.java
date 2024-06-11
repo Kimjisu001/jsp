@@ -11,6 +11,6 @@ public class BoardVO {
 	private String title;
 	private String content;
 	private String writer;
-	private int clickcnt;
+	private int clickCnt;
 	private Date creationDate;
 }
