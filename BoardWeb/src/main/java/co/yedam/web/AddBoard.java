@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+import co.yedam.service.BoardService;
+import co.yedam.service.BoardServiceImpl;
 import co.yedam.vo.BoardVO;
 
 public class AddBoard implements Control {
@@ -22,9 +24,9 @@ public class AddBoard implements Control {
 		bd.setContent(req.getParameter("content"));
 		
 		
-		BoardVO bod = new BoardVO();
+		BoardService svc = new BoardServiceImpl();
 		
-		if (bod.getTotalConut(bd)) {
+		if (svc.addBoard(bd)) {
 			System.out.println("정상적으로 등록");
 			resp.sendRedirect("main.do");
 		} else {
