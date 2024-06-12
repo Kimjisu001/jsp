@@ -20,23 +20,18 @@ public class AddStudent implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		SqlSession sqlSession = DataSource.getInstance().openSession();
-		StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
-
 		req.setCharacterEncoding("UTF-8");
+		
 		Student std = new Student();
-
 		std.setStdNo(req.getParameter("sno"));
 		std.setStdName(req.getParameter("sname"));
 		std.setPhone(req.getParameter("phone"));
 		std.setBldType(req.getParameter("bldType"));
 
-//		mapper.insertStudent(std);
 		StudentService svc = new StudentServiceImpl();
 
 		if (svc.addStudent(std)) {
 			System.out.println("정상적으로 등록");
-			sqlSession.commit();
 			resp.sendRedirect("main.do");
 		} else {
 			System.out.println("등록 실패");

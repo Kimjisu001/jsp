@@ -1,4 +1,4 @@
-package co.yedam;
+ package co.yedam;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+import co.yedam.web.AddBoard;
 import co.yedam.web.AddStudent;
+import co.yedam.web.BoardForm;
 import co.yedam.web.BoardList;
+import co.yedam.web.GetBoard;
 import co.yedam.web.MainControl;
 import co.yedam.web.ProductControl;
 import co.yedam.web.StudentForm;
@@ -26,6 +29,7 @@ public class FrontController extends HttpServlet {
 	public FrontController() {
 		map = new HashMap<String, Control>();
 	}
+
 	
 	@Override
 	public void init() throws ServletException {
@@ -37,7 +41,11 @@ public class FrontController extends HttpServlet {
 		map.put("/addStudent.do", new AddStudent());//정보 db에 저장.
 		//게시글목록
 		map.put("/boardList.do",new BoardList());
-		
+		//상세화면
+		map.put("/getBoard.do",new GetBoard());
+		//게시판등록
+		map.put("/addForm.do", new BoardForm());
+		map.put("/addBoard.do", new AddBoard());
 	}
 	
 	

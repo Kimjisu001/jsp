@@ -19,7 +19,7 @@ public class AppTest {
 		// interface - 구현객체
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 
-		List<BoardVO> list = mapper.boardList();
+		List<BoardVO> list = mapper.boardListPaging(3);
 		for (BoardVO bvo : list) {
 			System.out.println(bvo.toString());
 		}
