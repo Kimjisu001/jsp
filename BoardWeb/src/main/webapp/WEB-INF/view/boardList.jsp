@@ -3,16 +3,12 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@include file="../public/header.jsp"%>
+                                                   
 
-<%
-List<BoardVO> list = (List<BoardVO>) request.getAttribute("boardList");
-PageDTO pageDTO = (PageDTO) request.getAttribute("paging");  
-%>                                                     
-
-
-
-<h3>게시글 목록</h3>
+<h3>게시글 목록(boardList.jsp)</h3>
 
 
 <style>
@@ -54,16 +50,16 @@ PageDTO pageDTO = (PageDTO) request.getAttribute("paging");
 		<tr>
 	</thead>
 	
-	<tbody>
-		<%for (BoardVO vo : list) {%>
-		<tr>
-		<td><%=vo.getBoardNo()%></td>
-		<td><a href= "getBoard.do?bno=<%=vo.getBoardNo()%>"><%=vo.getTitle() %></a></td>
-		<td><%=vo.getWriter() %></td>
-		<td><%=vo.getClickCnt() %></td>
-		</tr>
-		<%} %>
-	</tbody>
+<tbody>
+    <c:forEach var="vo" items="${boardList}">
+        <tr>
+            <td>${vo.boardNo}</td>
+            <td><a href="getBoard.do?bno=${vo.boardNo}&page=${paging.page}"><c:out value="${vo.title}" /></a></td>
+            <td><c:out value="${vo.writer}" /></td>
+            <td><c:out value="${vo.clickCnt}" /></td>
+        </tr>
+    </c:forEach>
+</tbody>
 	
 </table>
 <body>
@@ -74,25 +70,26 @@ PageDTO pageDTO = (PageDTO) request.getAttribute("paging");
   <div class="pagination">
   
   <!-- 이전페이지 있는지 여부 검사 -->
-  <%if (pageDTO.isPrev()){ %>
-  <a href = "boardList.do?page=<%=pageDTO.getStartPage()-1%>">&laquo;</a>
-  <%} %>
+  <c:if test="${paging.prev }">
+  <a href = "boardList.do?page=${paging.startPage-1 }">&laquo;</a>
+  </c:if>
   
   <!-- 현재페이지 있는지 검사-->
-  <%for(int p = pageDTO.getStartPage(); p <= pageDTO.getEndPage();p++) {%>
-  <%  if (p==pageDTO.getPage()) { %>
-  <a href="boardList.do?page=<%=p %>"class="active"><%=p %></a>
-  <%} else{ %>
-  <a href = "boardList.do?page=<%=p %>"><%=p %></a>
-  <%} }%>
-  
-  
+<c:forEach var="p" begin="${paging.startPage}" end="${paging.endPage}">
+    <c:choose>
+        <c:when test="${p == paging.page}">
+            <a href="boardList.do?page=${p}" class="active"><c:out value="${p}" /></a>
+        </c:when>
+        <c:otherwise>
+            <a href="boardList.do?page=${p}"><c:out value="${p}" /></a>
+        </c:otherwise>
+    </c:choose>
+</c:forEach>
   
   <!-- 마지막 페이지 검사-->
-    
-  <%if (pageDTO.isNext()){ %>
-  <a href = "boardList.do?page=<%=pageDTO.getEndPage() + 1%>">&laquo;</a>
-  <%} %>
+   <c:if test="${paging.next }">
+  <a href = "boardList.do?page=${pageing.endPage+1 }">&laquo;</a>
+  </c:if>
     </div>
 </div>
 

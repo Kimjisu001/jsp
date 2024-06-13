@@ -19,7 +19,7 @@
 			<td><input type="text" name="content"></td>
 		</tr>
 		<tr>
-			<td colspan="2"><input type="button" value="등록하기"
+			<td colspan="2"><input type="submit" value="등록하기"
 				class="btn btn-primary"></td>
 		</tr>
 	</table>

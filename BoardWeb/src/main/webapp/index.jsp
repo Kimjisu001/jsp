@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판 첫페이지입니다.</title>
+<script type="text/javascript">
+	location.href='main.do';
+</script>
 </head>
 <body>
 	<h3>Hello, World!!</h3>

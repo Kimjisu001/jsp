@@ -45,4 +45,16 @@ public class BoardServiceImpl implements BoardService {
 		return false;
 	}
 
+	@Override
+	public boolean updateBoard(BoardVO bno) {
+		// TODO Auto-generated method stub
+		return mapper.updateBoard(bno) == 1;
+
+	}
+
+	@Override
+	public boolean checkMember(String id, String pw) {
+		// TODO Auto-generated method stub
+		return mapper.selectMember(id, pw) == 1;
+	}
 }
