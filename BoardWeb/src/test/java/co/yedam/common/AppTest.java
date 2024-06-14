@@ -13,16 +13,16 @@ import co.yedam.vo.Student;
 public class AppTest {
 
 	public static void main(String[] args) {
-		SqlSessionFactory sqlSessionFactory = DataSource.getInstance();
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-
-		// interface - 구현객체
+		SqlSession sqlSession = DataSource.getInstance().openSession(true); // 자동 커밋 하겠습니다.
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 
-		List<BoardVO> list = mapper.boardListPaging(3);
-		for (BoardVO bvo : list) {
-			System.out.println(bvo.toString());
-		}
+
+		SearchVO search = new SearchVO(1, "TW", "02");
+		
+		mapper.boardListPaging(search)//
+		        .forEach(bvo -> System.out.println(bvo));
+		
+		
 
 	}
 }

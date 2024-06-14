@@ -4,7 +4,7 @@
 <!-- 만든 태그 사용방법 1-->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<jsp:include page="../public/header.jsp" /><!-- 남이 만들어 놓은 태그 사용 1-->
+
 <h3>로그인 화면(loginForm.jsp)</h3>
 <myTag:line />
 <!-- 만든 태그 사용방법 3-->
@@ -30,4 +30,4 @@
 		</tr>
 	</table>
 </form>
-<%@include file="../public/footer.jsp"%>
+

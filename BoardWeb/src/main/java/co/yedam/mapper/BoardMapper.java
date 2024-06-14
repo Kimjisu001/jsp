@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import co.yedam.common.SearchVO;
 import co.yedam.vo.BoardVO;
 
 //목록, 등록, 수정, 삭제, 단건조회 만들어서 
@@ -11,12 +12,12 @@ import co.yedam.vo.BoardVO;
 
 public interface BoardMapper {
 	List<BoardVO> boardList(); //전체 목록 출력해주는것을 다섯개씩 잘라서 보여주려고 함
-	List<BoardVO> boardListPaging(int page);//페이지별로 5건씩
+	List<BoardVO> boardListPaging(SearchVO search);//페이지별로 5건씩
 	int insertBoard(BoardVO bvo);
 	int updateBoard(BoardVO bvo);
 	int deleteBoard(int bno);
 	//BoardVO selectBoard(int bno);
-	int getTotalConut();   
+	int getTotalConut(SearchVO search);   
 	BoardVO selectBoard(int bno);// 단건조회
 	//등록기능
 	

@@ -18,6 +18,9 @@ public class ModifyBoard implements Control {
 		String bno = req.getParameter("bno");
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
+		String sc = req.getParameter("searchCondition");
+		String kw = req.getParameter("keyword");
+		String page = req.getParameter("page");
 
 		BoardVO bvo = new BoardVO();
 		bvo.setBoardNo(Integer.parseInt(bno));
@@ -26,7 +29,7 @@ public class ModifyBoard implements Control {
 
 		BoardService svc = new BoardServiceImpl();
 		if (svc.updateBoard(bvo)) {
-			resp.sendRedirect("boardList.do");
+			resp.sendRedirect("boardList.do?page=" + page + "&searchCondition="+sc+"&keyword="+kw );
 		} else {
 			req.getRequestDispatcher("WEB-INF/view/modifyBoardForm.jsp").forward(req, resp);
 		}

@@ -2,10 +2,13 @@
 	pageEncoding="UTF-8"%>
 	<!-- 남이 사용한 코드 사용 방법 깔끔하게 구문 만드는 방법  -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<jsp:include page="../public/header.jsp" />
+
 <h3>상세화면</h3>
 <form name="myFrm" action="removeForm.do">
+	<input type="hidden" value="${page }" name="page">
 	<input type="hidden" value="${board.boardNo }" name="bno">
+	<input type="hidden" value="${searchCondition }" name="searchCondition">
+	<input type="hidden" value="${keyword }" name="keyword">
 	<table class='table'>
 
 		<tr>
@@ -68,4 +71,3 @@
 	//수정 화면이동으로 처리할 경우에는 action = "modifyForm.do"
 </script>
 
-<jsp:include page="../public/footer.jsp" />

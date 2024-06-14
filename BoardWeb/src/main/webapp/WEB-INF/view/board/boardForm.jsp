@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@include file="../public/header.jsp"%>
+
 <!DOCTYPE html>
 
 <h3>게시판 등록</h3>
@@ -24,4 +24,3 @@
 		</tr>
 	</table>
 	</form>
-<%@include file="../public/footer.jsp"%>

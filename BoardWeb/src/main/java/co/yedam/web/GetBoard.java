@@ -18,13 +18,19 @@ public class GetBoard implements Control {
 		// TODO Auto-generated method stub
 		
 		String bno = req.getParameter("bno");
+		String sc = req.getParameter("searchCondition");
+		String kw = req.getParameter("keyword");
+		String page = req.getParameter("page");
 		
 		BoardService svc = new BoardServiceImpl();
 	    BoardVO brd = svc.getBoard(Integer.parseInt(bno));
 	    
 	    req.setAttribute("board", brd);
+	    req.setAttribute("searchCondition",sc);
+	    req.setAttribute("keyword", kw);
+	    req.setAttribute("page", page);
 	    
-	    req.getRequestDispatcher("WEB-INF/view/borad.jsp").forward(req,resp);
+	    req.getRequestDispatcher("board/borad.tiles").forward(req,resp);
 	}
 
 }
