@@ -1,7 +1,7 @@
 /**
  * dom1.js
  */
-//document.getElementById('fruit').style.display = 'none';
+document.getElementById('fruit').style.display = 'none';
 
 document.querySelector('table.table tr:nth-of-type(5)')//
 	.setAttribute('align', 'center'); //추가 버튼 가운데 정렬
