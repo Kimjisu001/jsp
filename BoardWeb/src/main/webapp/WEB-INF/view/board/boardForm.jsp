@@ -24,7 +24,6 @@
 		</tr>
 	</table>
 	</form>
-<!DOCTYPE html>
 
 <h3>게시판 등록</h3>
 <form action="addBoard.do" >
