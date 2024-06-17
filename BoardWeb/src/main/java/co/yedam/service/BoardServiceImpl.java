@@ -8,6 +8,7 @@ import co.yedam.common.DataSource;
 import co.yedam.common.SearchVO;
 import co.yedam.mapper.BoardMapper;
 import co.yedam.vo.BoardVO;
+import co.yedam.vo.MemberVO;
 
 //업무 프로세스를 따라 실행하기 위한 서비스
 
@@ -54,8 +55,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public boolean checkMember(String id, String pw) {
+	public MemberVO checkMember(String id, String pw) {
 		// TODO Auto-generated method stub
-		return mapper.selectMember(id, pw) == 1;
+		return mapper.selectMember(id, pw);
 	}
 }
