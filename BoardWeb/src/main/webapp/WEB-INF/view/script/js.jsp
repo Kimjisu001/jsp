@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!--  script/js.jsp -->
 
-<script src="js/basic.js"></script>
+<div id = "dom">
 <h3>자바 스크립트 연습</h3>
 
 <ul id='fruit'>
@@ -49,5 +49,58 @@
 </table>
 
 
+<select id = "selectMonth">
+<option value = "5"> 5월 </option>
+<option value = "6"> 6월 </option>
+<option value = "7"> 7월 </option>
+</select>
+</div>
+
+
+<table class="table">
+	<tr>
+		<th>사번</th>
+		<td><input id="mid"></td>
+	</tr>
+	<tr>
+		<th>사원명</th>
+		<td><input id="mname"></td>
+	</tr>
+	<tr>
+		<th>이메일</th>
+		<td><input id="mphone"></td>
+	</tr>
+	<tr>
+		<th>급여</th>
+		<td><input id="mpoint"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><button id="addBtn">추가</button>
+	</tr>
+</table>
+
+<table class = "table">
+<thead>
+  <tr>
+    <th>사번</th>
+    <th>이름(first_name)</th>
+    <th>이메일</th>
+    <th>급여</th>
+  </tr>
+  </thead>
+  <tbody id = "list">
+  </tbody>
+</table>
+
+
+
+
+
+<div id="show"></div>
+
+
+
+
 <script src="js/data.js"></script>
-<script src="js/dom1.js"></script>
+<script src="js/obj1.js"></script>
+

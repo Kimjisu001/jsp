@@ -1,6 +1,6 @@
 
  //DOM 핸들링 연습
- document.querySelector('ul#fruit>li').innerHTML ='사과';
+
  //li 생성
  let li = document.createElement('li'); //li태그를 만듬
  li.innerHTML = '<b>오렌지</b>' //<li><b>오렌지</b></li>
