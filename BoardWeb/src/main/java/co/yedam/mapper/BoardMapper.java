@@ -20,9 +20,14 @@ public interface BoardMapper {
 	//BoardVO selectBoard(int bno);
 	int getTotalConut(SearchVO search);   
 	BoardVO selectBoard(int bno);// 단건조회
+	
 	//등록기능
+	List<MemberVO> memberList();
+	int insertMemberAjax(MemberVO mvo);
 	
 	
 	//회원 ID, 회원비번
 	MemberVO selectMember(@Param("id")String id, @Param("pw") String pw);
+	
+	
 }

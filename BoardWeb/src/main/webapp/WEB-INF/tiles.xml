@@ -32,7 +32,7 @@
   </definition>
   
   <definition name="WILDCARD:board/*" extends="boardapp">
-  <put-attribute name="body" value="/WEB-INF/view/{1}.jsp" />
+  <put-attribute name="body" value="/WEB-INF/view/board/{1}.jsp" />
   </definition>
   
   <definition name="WILDCARD:*/*" extends="boardapp">

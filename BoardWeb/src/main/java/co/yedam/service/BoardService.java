@@ -20,5 +20,7 @@ public interface BoardService {
 	//checkMember(id,pw)
 	MemberVO checkMember(String id, String pw);
 
+	List<MemberVO> memberList();
 	
+	boolean addMemberAjax(MemberVO mvo);
 }

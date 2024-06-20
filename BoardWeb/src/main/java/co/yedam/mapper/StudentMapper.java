@@ -3,6 +3,7 @@ package co.yedam.mapper;
 import java.util.List;
 
 import co.yedam.vo.BoardVO;
+import co.yedam.vo.MemberVO;
 import co.yedam.vo.Student;
 
 public interface StudentMapper {
@@ -13,4 +14,6 @@ public interface StudentMapper {
 	public int updateStudentPhone(Student student);
 	public int deleteStudent(Student student);
 	public List<BoardVO> boardList();
+
+	
 }
