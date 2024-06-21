@@ -83,6 +83,7 @@ div.reply span {
 	<button type="button" class="btn btn-outline-primary">목록으로 이동하기</button>
 	</table>
 
+
 </form>
 <!-- 댓글관련 시작. -->
 <!-- 목록가져오기 -->

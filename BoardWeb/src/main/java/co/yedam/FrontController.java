@@ -13,6 +13,7 @@ import co.yedam.common.Control;
 import co.yedam.web.AddBoard;
 import co.yedam.web.AddReply;
 import co.yedam.web.AddStudent;
+import co.yedam.web.AjaxForm;
 import co.yedam.web.BoardForm;
 import co.yedam.web.BoardList;
 import co.yedam.web.GetBoard;
@@ -22,10 +23,13 @@ import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
 import co.yedam.web.MemberAjax;
 import co.yedam.web.MemberList;
+import co.yedam.web.MenberAddAjax;
 import co.yedam.web.ModifyBoard;
 import co.yedam.web.ModifyForm;
 import co.yedam.web.ProductControl;
+import co.yedam.web.PublicData;
 import co.yedam.web.RemoveReply;
+import co.yedam.web.ReplyList;
 import co.yedam.web.StudentForm;
 import co.yedam.web.scriptForm;
 
@@ -80,6 +84,10 @@ public class FrontController extends HttpServlet {
 		map.put("/replyListJson.do", new ReplyList());
 		map.put("/removeReply.do", new RemoveReply());
 		map.put("/addReply.do", new AddReply());
+		
+		// 공공자료 가져와서 활용
+		map.put("/publicData.do", new PublicData());
+		
 		
 
 	}

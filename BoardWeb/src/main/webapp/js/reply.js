@@ -1,8 +1,11 @@
 /**
  * reply.js
  */
-svc.replyList(bno, replyListFnc);
+//svc.replyList({bno,page} replyListFnc);
 
+//이 값을 바꿔서 페이지 5장씩 보기
+let page = 2;
+svc.replyList({bno,page}, replyListFnc);
 
 //댓글등록 이벤트.(요소를 가져와서 그 버튼을 클릭하면 이 함수가 실행)
 document.getElementById('addReply').addEventListener('click', addReplyFnc);

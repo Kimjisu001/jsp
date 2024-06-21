@@ -25,6 +25,6 @@
 			class="list-group-item list-group-item-action list-group-item-light p-3"
 			href="ajax.do">ajax연습</a> <a
 			class="list-group-item list-group-item-action list-group-item-light p-3"
-			href="#!">Status</a>
+			href="publicData.do">publicData</a>
 	</div>
 </div>

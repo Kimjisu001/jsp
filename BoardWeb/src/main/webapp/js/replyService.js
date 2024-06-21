@@ -4,7 +4,7 @@
 
 const svc = {
 	//목록
-	replyList(bno, successCall) {
+	replyList(param={bno:1, page:1}, successCall) {
 		const xhtp = new XMLHttpRequest();
 		xhtp.open('get', 'replyListJson.do?bno=' + bno);
 		xhtp.send();

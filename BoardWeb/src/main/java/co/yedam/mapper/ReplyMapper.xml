@@ -5,6 +5,17 @@
 
 <mapper namespace="co.yedam.mapper.ReplyMapper">
 
+	<select id="selectListPaging">
+		select b.*
+		from (select /*+INDEX(r REPLY_PK)*/ rownum rn, r.*
+		from reply_tbl r
+		where board_no = #{boardNo}) b
+    <![CDATA[
+    where b.rn <= #{page} * 5
+    ]]>
+		and b.rn > (#{page} -1) * 5
+	</select>
+
 	<select id="selectList" parameterType="int">
 		select reply_no
 		,reply
@@ -26,9 +37,10 @@
 	</select>
 
 	<insert id="insertReply" parameterType="co.yedam.vo.ReplyVO">
-	<selectKey resultType = "int" keyProperty="replyNo" order="BEFORE">
-	 select reply_seq.nextval from dual 
-	</selectKey>
+		<selectKey resultType="int" keyProperty="replyNo"
+			order="BEFORE">
+			select reply_seq.nextval from dual
+		</selectKey>
 		insert into reply_tbl
 		(reply_id, reply, replyer, board_no)
 		values(#{replyNo}, #{reply}, #{replyer}, #{boardNo})

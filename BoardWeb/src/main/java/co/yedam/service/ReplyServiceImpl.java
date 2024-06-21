@@ -14,8 +14,8 @@ public class ReplyServiceImpl implements ReplyService {
 	
 	
 	@Override
-	public List<ReplyVO> replyList(int boardNo) {
-		return mapper.selectList(boardNo);
+	public List<ReplyVO> replyList(int boardNo, int page) {
+		return mapper.selectListPaging(boardNo, page);
 	}
 	@Override
 	public ReplyVO getReply(int replyNo) {
