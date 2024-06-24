@@ -23,7 +23,7 @@ public class MenberAddAjax implements Control {
 		
 		MemberVO mvo = new MemberVO();
 		mvo.setUserId(id);
-		mvo.setUserPW(pw);
+		mvo.setUserPw(pw);
 		mvo.setUserName(nm);
 		mvo.setResponsibility(auth);
 

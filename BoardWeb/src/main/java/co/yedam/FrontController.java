@@ -11,16 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
 import co.yedam.web.AddBoard;
+import co.yedam.web.AddForm;
+import co.yedam.web.AddMebver;
 import co.yedam.web.AddReply;
 import co.yedam.web.AddStudent;
 import co.yedam.web.AjaxForm;
 import co.yedam.web.BoardForm;
 import co.yedam.web.BoardList;
+import co.yedam.web.CenterChart;
+import co.yedam.web.CenterInfo;
+import co.yedam.web.ChartForm;
 import co.yedam.web.GetBoard;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginForm;
 import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
+import co.yedam.web.MapFrom;
 import co.yedam.web.MemberAjax;
 import co.yedam.web.MemberList;
 import co.yedam.web.MenberAddAjax;
@@ -79,16 +85,23 @@ public class FrontController extends HttpServlet {
 		map.put("/ajax.do", new AjaxForm());
 		map.put("/membersAjax.do", new MemberAjax());
 		map.put("/addAjax.do", new MenberAddAjax());
-		
+
 		// 댓글관련
 		map.put("/replyListJson.do", new ReplyList());
 		map.put("/removeReply.do", new RemoveReply());
 		map.put("/addReply.do", new AddReply());
-		
+
 		// 공공자료 가져와서 활용
 		map.put("/publicData.do", new PublicData());
-		
-		
+		// 맵 경로 등록
+		map.put("/map.do", new MapFrom());
+		// json 문자열
+		map.put("/centerInfo.do", new CenterInfo());
+		// 센터 차트
+		map.put("/ChartForm.do", new ChartForm());
+		map.put("/centerChart.do", new CenterChart());
+		map.put("/addMemberForm.do", new AddForm());
+		map.put("/addMember.do", new AddMebver());
 
 	}
 

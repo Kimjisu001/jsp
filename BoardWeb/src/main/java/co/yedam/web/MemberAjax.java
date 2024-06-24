@@ -28,7 +28,7 @@ public class MemberAjax implements Control {
 		for (int i = 0; i < list.size(); i++) {
 			json += "{\"userId\":\""+list.get(i).getUserId()//
 					+ "\",\"userName\":\"" + list.get(i).getUserName()//
-					+ "\",\"userPw\":\"" + list.get(i).getUserPW()//
+					+ "\",\"userPw\":\"" + list.get(i).getUserPw()//
 					+ "\"}";
 			if(i != list.size() -1) {
 				json += ",";

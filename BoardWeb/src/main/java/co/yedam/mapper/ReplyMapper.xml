@@ -5,10 +5,18 @@
 
 <mapper namespace="co.yedam.mapper.ReplyMapper">
 
+	<select id="centerBysido" resultType="map">
+		select sido as "sido", count(1) as "cnt"
+		from center_tbl
+		group by sido
+	</select>
+	
+	
 	<select id="selectListPaging">
 		select b.*
 		from (select /*+INDEX(r REPLY_PK)*/ rownum rn, r.*
-		from reply_tbl r
+		from
+		reply_tbl r
 		where board_no = #{boardNo}) b
     <![CDATA[
     where b.rn <= #{page} * 5
@@ -50,5 +58,15 @@
 		delete from reply_tbl
 		where reply_no =#{replyNo}
 	</delete>
+
+	<insert id='insertCenter'>
+		insert into center_tbl(id, center_name, sido, phone_number, address)
+		<foreach collection="array" item="center" open=" select "
+			close=" from dual " separator=" from dual union all select ">
+			#{center.id}, #{center.centerName},
+			#{center.sido}, #{center.phoneNumber}, #{center.address}
+		</foreach>
+
+	</insert>
 
 </mapper>

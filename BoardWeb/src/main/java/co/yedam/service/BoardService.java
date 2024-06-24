@@ -1,6 +1,7 @@
 package co.yedam.service;
 
 import java.util.List;
+import java.util.Map;
 
 import co.yedam.common.SearchVO;
 import co.yedam.vo.BoardVO;
@@ -16,11 +17,11 @@ public interface BoardService {
 	boolean removeBoard(int bno);
 	int boardTotal(SearchVO search);
 	boolean updateBoard(BoardVO bno);
-	
-	//checkMember(id,pw)
-	MemberVO checkMember(String id, String pw);
 
+	// checkMember(id,pw)
+	MemberVO checkMember(String id, String pw);
+	boolean addMemberImage(MemberVO mvo);
 	List<MemberVO> memberList();
-	
+
 	boolean addMemberAjax(MemberVO mvo);
 }

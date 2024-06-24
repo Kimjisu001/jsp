@@ -1,6 +1,7 @@
 package co.yedam.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -59,17 +60,22 @@ public class BoardServiceImpl implements BoardService {
 		// TODO Auto-generated method stub
 		return mapper.selectMember(id, pw);
 	}
-	
+
 	@Override
 	public List<MemberVO> memberList() {
 		// TODO Auto-generated method stub
 		return mapper.memberList();
 	}
-	
+
 	@Override
 	public boolean addMemberAjax(MemberVO mvo) {
-		return mapper.insertMemberAjax(mvo)==1;
-		
+		return mapper.insertMemberAjax(mvo) == 1;
+
 	}
-	
+
+	@Override
+	public boolean addMemberImage(MemberVO mvo) {
+		return mapper.insertMemberImage(mvo) == 1;
+	}
+
 }

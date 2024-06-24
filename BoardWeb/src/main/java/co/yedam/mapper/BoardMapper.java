@@ -29,5 +29,7 @@ public interface BoardMapper {
 	//회원 ID, 회원비번
 	MemberVO selectMember(@Param("id")String id, @Param("pw") String pw);
 	
+	int insertMemberImage(MemberVO mvo);
+	
 	
 }

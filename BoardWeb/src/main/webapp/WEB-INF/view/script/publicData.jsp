@@ -13,6 +13,9 @@
 
 <select id="searchList" >
 </select>
+
+<button id = "centerDB">센터DB생성</button>
+
 <p>sido 정보에서 중복된 값을 제거해서 위 option태그를 생성하고 검색하기.</p>
 
 <table class="table">

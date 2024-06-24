@@ -1,7 +1,9 @@
 package co.yedam.web;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,28 +15,26 @@ import com.google.gson.GsonBuilder;
 import co.yedam.common.Control;
 import co.yedam.service.ReplyService;
 import co.yedam.service.ReplyServiceImpl;
-import co.yedam.vo.ReplyVO;
 
-public class ReplyList implements Control {
+public class CenterChart implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//한글로 댓글 나오게 하기
 		resp.setContentType("text/json;charset=utf-8");
-		String bno = req.getParameter("bno");
-		String page = req.getParameter("page");
-		
-		page = page == null ? "1" : page;
-		//댓글 목록.
 		ReplyService svc = new ReplyServiceImpl();
-		List<ReplyVO> list = svc.replyList(Integer.parseInt(bno),Integer.parseInt(page));
+		List<Map<String, Object>>  result = svc.centerList();
 		
-		Gson gson = new GsonBuilder().setPrettyPrinting().create(); //gson 객체생성(외워)
-		String json = gson.toJson(list);//객체-> 문자열
-		//{"test":"a"} => json
-		//{ test :"a"} => 객체
-		resp.getWriter().print(json);//사용자 웹브라우저 출력
+		Map<String, Object> centerMap =new HashMap<>();
+		
+		for (Map<String, Object> map: result) {
+			System.out.println(map.get("sido")+"," + map.get("cnt"));
+			System.out.println("------------------------");
+			centerMap.put((String)map.get("sido"),map.get("cnt"));
+		}
+		Gson gson = new GsonBuilder().create();
+		String json = gson.toJson(result);
+		resp.getWriter().print(json);
 	}
 
 }

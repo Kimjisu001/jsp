@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <h3>ajax 연습</h3>
 <div id="register">
+<form action="addMebver.do" method ="post" enctype="multipart/form-data">
 	<table class="table">
 		<tr>
 			<th>아이디</th>
@@ -20,13 +21,22 @@
 			<th>권한</th>
 			<td><select id="auth">
 				<option value="User">사용자</option>
-				<option value="Admin">관리자</option>
-				
+				<option value="Admin">관리자</option>	
 			</select></td>
 		</tr>
+		
+			
+		<tr>
+			<th>파일</th>
+			<td><input class = "form=control" type= "file" name = "myImage"></td>
+		</tr>
+			
+		
 		<tr>
 		<td colspan ="2"><button id = "addBtn">등록</button>
+		</td></tr>
 	</table>
+	</form>
 </div>
 
 <script src="js/ajax3.js">
